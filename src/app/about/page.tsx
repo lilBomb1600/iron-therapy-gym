@@ -39,6 +39,19 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+
+        <div className="mt-20 border-t border-line pt-14">
+          <div className="flex items-start gap-6">
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-2 border-ember bg-steel">
+              <User className="h-9 w-9 text-paper-dim" strokeWidth={1} />
+            </div>
+            <div>
+              <span className="font-condensed text-sm uppercase tracking-[0.3em] text-ember-light">Co-Coach</span>
+              <h2 className="font-display mt-1 text-3xl tracking-wide text-paper sm:text-4xl">{business.coCoach.name}</h2>
+              <p className="mt-4 max-w-2xl text-balance leading-relaxed text-paper-dim">{business.coCoach.blurb}</p>
+            </div>
+          </div>
+        </div>
       </Container>
     </div>
   );

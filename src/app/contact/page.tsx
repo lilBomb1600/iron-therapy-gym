@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MapPin, Clock } from "lucide-react";
+import { MapPin, Clock, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
 
@@ -12,6 +12,14 @@ export default function ContactPage() {
         <span className="font-condensed text-sm uppercase tracking-[0.3em] text-ember-light">Get In</span>
         <h1 className="font-display mt-3 text-5xl tracking-wide text-paper sm:text-6xl">Join The Gym</h1>
         <p className="mt-4 max-w-lg text-balance text-paper-dim">{business.description}</p>
+
+        <a
+          href={business.phoneHref}
+          className="ember-glow mt-7 inline-flex items-center gap-2.5 bg-ember px-7 py-3.5 font-condensed text-sm font-semibold uppercase tracking-[0.15em] text-paper transition-transform hover:-translate-y-0.5"
+        >
+          <Phone className="h-4 w-4" />
+          Call {business.phone}
+        </a>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-2">
           <div>

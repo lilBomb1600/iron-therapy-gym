@@ -1,7 +1,8 @@
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
+import { averageRating, reviewCount } from "@/data/reviews";
 
-const stats = [...business.owner.stats, { value: "24/7", label: "Keycard Access" }];
+const stats = [...business.owner.stats, { value: `${averageRating.toFixed(1)}★`, label: `${reviewCount} Yelp Reviews` }];
 
 export function ScoreboardStats() {
   return (

@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { Phone } from "lucide-react";
 import { useEffect, useState } from "react";
+import { business } from "@/data/business";
 
 export function TopBar() {
   const [time, setTime] = useState<string | null>(null);
@@ -29,6 +31,13 @@ export function TopBar() {
             Open 24/7
           </span>
           {time && <span className="hidden tabular-nums sm:inline">{time}</span>}
+          <a
+            href={business.phoneHref}
+            className="flex items-center gap-1.5 rounded-sm bg-ember px-2.5 py-1 text-xs font-semibold text-paper transition-opacity hover:opacity-90"
+          >
+            <Phone className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">{business.phone}</span>
+          </a>
         </div>
       </div>
     </header>

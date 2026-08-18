@@ -11,6 +11,8 @@ export const business = {
   },
   mapsHref: "https://www.google.com/maps/search/?api=1&query=1280+Diamond+Way+Ste+B+Concord+CA+94520",
   mapsEmbedSrc: "https://maps.google.com/maps?q=1280%20Diamond%20Way%2C%20Ste%20B%2C%20Concord%2C%20CA%2094520&output=embed",
+  phone: "(925) 822-3488",
+  phoneHref: "tel:+19258223488",
   hours: "Open 24 Hours, 7 Days a Week",
   languages: ["English", "Spanish"],
   highlights: [
@@ -46,7 +48,7 @@ export const business = {
     "Virtual Fitness Classes",
   ],
   owner: {
-    name: "Bob S.",
+    name: "Bob Soula",
     title: "Owner & Head Coach",
     bio: "Hi there. Thanks for stopping by. At Iron Therapy Gym we offer 1-on-1 training and group strength training classes. I make sure each and every one of my clients gets plenty of instruction and education to help them achieve their goal. We've transformed well over 1,000 clients' bodies to make their goals a reality. I've been training people since 2005 and started Iron Therapy Gym in 2010. I have experience working with young and old. I have a strong background in strength training, powerlifting, weight loss and client transformations — but also mobility and rehabilitation. If you need it, we got it! Don't be afraid to send me a message so we can talk more. I always tell my clients: if you give me 100%, I will give you 200%. Join me in my passion for strength and transformation. Looking forward to helping you achieve your goals :)",
     stats: [
@@ -54,5 +56,11 @@ export const business = {
       { value: "2010", label: "Gym Founded" },
       { value: "1,000+", label: "Transformations" },
     ],
+  },
+  coCoach: {
+    name: "Blanca",
+    title: "Coach",
+    blurb:
+      "Members mention Blanca in nearly every review — praised again and again for her 1:1 coaching, patience with beginners, and for treating the gym like family.",
   },
 } as const;
