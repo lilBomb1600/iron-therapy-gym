@@ -4,12 +4,15 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
+import { BarbellIcon, PlateIcon } from "@/components/ui/GymIcons";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[640px] flex-col overflow-hidden sm:min-h-[680px] sm:flex-row">
       {/* Night panel */}
       <div className="relative flex flex-1 items-center bg-gradient-to-br from-ink to-steel sm:absolute sm:inset-0">
+        <BarbellIcon className="pointer-events-none absolute -left-6 bottom-4 w-56 rotate-[-8deg] text-paper/[0.06] sm:w-72" />
+        <PlateIcon className="pointer-events-none absolute -top-10 left-1/3 w-28 text-paper/[0.05] sm:w-36" />
         <Container className="w-full sm:max-w-none sm:pr-[52%]">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -33,6 +36,7 @@ export function Hero() {
 
       {/* Ember panel */}
       <div className="torn-seam relative flex flex-1 items-center justify-end bg-gradient-to-bl from-ember to-ink py-10 sm:absolute sm:inset-0">
+        <PlateIcon className="pointer-events-none absolute -right-8 -top-8 w-40 text-paper/10 sm:w-52" />
         <Container className="w-full sm:ml-auto sm:max-w-none sm:pl-[8%] sm:text-right">
           <motion.h2
             initial={{ opacity: 0, y: 18 }}

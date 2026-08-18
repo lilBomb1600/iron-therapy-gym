@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { MapPin, Clock, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
+import { PlateIcon } from "@/components/ui/GymIcons";
 
 export const metadata: Metadata = { title: "Join | Iron Therapy Gym" };
 
 export default function ContactPage() {
   return (
-    <div className="py-16 sm:py-24">
-      <Container>
+    <div className="relative overflow-hidden py-16 sm:py-24">
+      <PlateIcon className="pointer-events-none absolute -right-16 -top-10 w-60 text-paper/[0.04] sm:w-72" />
+      <Container className="relative">
         <span className="font-condensed text-sm uppercase tracking-[0.3em] text-ember-light">Get In</span>
         <h1 className="font-display mt-3 text-5xl tracking-wide text-paper sm:text-6xl">Join The Gym</h1>
         <p className="mt-4 max-w-lg text-balance text-paper-dim">{business.description}</p>

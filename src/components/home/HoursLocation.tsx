@@ -1,11 +1,13 @@
 import { MapPin, Clock, Globe } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
+import { BarbellIcon } from "@/components/ui/GymIcons";
 
 export function HoursLocation() {
   return (
-    <section className="border-t border-line bg-steel py-20 sm:py-28">
-      <Container className="grid gap-10 sm:grid-cols-3">
+    <section className="relative overflow-hidden border-t border-line bg-steel py-20 sm:py-28">
+      <BarbellIcon className="pointer-events-none absolute -right-8 -bottom-6 w-64 rotate-6 text-paper/[0.05] sm:w-80" />
+      <Container className="relative grid gap-10 sm:grid-cols-3">
         <div className="flex flex-col gap-3">
           <Clock className="h-7 w-7 text-ember-light" />
           <h3 className="font-display text-2xl tracking-wide text-paper">Hours</h3>

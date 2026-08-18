@@ -1,13 +1,15 @@
 import { Container } from "@/components/ui/Container";
 import { StarRating } from "@/components/ui/StarRating";
 import { reviews, averageRating, reviewCount } from "@/data/reviews";
+import { PlateIcon } from "@/components/ui/GymIcons";
 
 export function Testimonials() {
   const shown = [...reviews].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0)).slice(0, 6);
 
   return (
-    <section className="border-t border-line py-20 sm:py-28">
-      <Container>
+    <section className="relative overflow-hidden border-t border-line py-20 sm:py-28">
+      <PlateIcon className="pointer-events-none absolute -left-14 bottom-0 w-48 text-paper/[0.04] sm:w-64" />
+      <Container className="relative">
         <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="font-display text-4xl tracking-wide text-paper sm:text-5xl">The Gym Fam</h2>

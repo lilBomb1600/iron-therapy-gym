@@ -1,13 +1,15 @@
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
+import { DumbbellIcon } from "@/components/ui/GymIcons";
 
 // Real weight-plate denominations, used purely as a decorative index — not literal load values.
 const plates = [45, 35, 25, 10, 5, 45, 35, 25];
 
 export function Services() {
   return (
-    <section id="services" className="py-20 sm:py-28">
-      <Container>
+    <section id="services" className="relative overflow-hidden py-20 sm:py-28">
+      <DumbbellIcon className="pointer-events-none absolute -right-10 top-2 w-52 rotate-12 text-paper/[0.04] sm:w-72" />
+      <Container className="relative">
         <div className="mb-12 flex items-end justify-between">
           <h2 className="font-display text-4xl tracking-wide text-paper sm:text-5xl">Programs</h2>
           <span className="hidden font-condensed text-sm uppercase tracking-[0.2em] text-paper-dim sm:block">

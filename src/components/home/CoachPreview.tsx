@@ -2,13 +2,16 @@ import Link from "next/link";
 import { User } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
+import { KettlebellIcon } from "@/components/ui/GymIcons";
 
 export function CoachPreview() {
   return (
-    <section className="border-t border-line py-20 sm:py-28">
-      <Container className="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="mx-auto flex aspect-square w-full max-w-xs items-center justify-center rounded-full border-2 border-ember bg-steel">
-          <User className="h-20 w-20 text-paper-dim" strokeWidth={1} />
+    <section className="relative overflow-hidden border-t border-line py-20 sm:py-28">
+      <KettlebellIcon className="pointer-events-none absolute -bottom-6 left-4 w-24 text-paper/[0.05] sm:w-32" />
+      <Container className="relative grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="relative mx-auto flex aspect-square w-full max-w-xs items-center justify-center overflow-hidden rounded-full border-2 border-ember bg-steel">
+          <KettlebellIcon className="pointer-events-none absolute h-40 w-40 text-paper/[0.06]" />
+          <User className="relative h-20 w-20 text-paper-dim" strokeWidth={1} />
         </div>
         <div>
           <span className="font-condensed text-sm uppercase tracking-[0.3em] text-ember-light">Meet Your Coach</span>

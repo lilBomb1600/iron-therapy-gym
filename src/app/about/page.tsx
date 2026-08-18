@@ -2,13 +2,16 @@ import type { Metadata } from "next";
 import { User } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
+import { KettlebellIcon, BarbellIcon } from "@/components/ui/GymIcons";
 
 export const metadata: Metadata = { title: "The Coach | Iron Therapy Gym" };
 
 export default function AboutPage() {
   return (
-    <div className="py-16 sm:py-24">
-      <Container>
+    <div className="relative overflow-hidden py-16 sm:py-24">
+      <BarbellIcon className="pointer-events-none absolute -right-10 top-24 w-64 rotate-12 text-paper/[0.04] sm:w-80" />
+      <KettlebellIcon className="pointer-events-none absolute -left-8 bottom-10 w-28 text-paper/[0.05] sm:w-36" />
+      <Container className="relative">
         <span className="font-condensed text-sm uppercase tracking-[0.3em] text-ember-light">The Coach</span>
         <h1 className="font-display mt-3 text-5xl tracking-wide text-paper sm:text-6xl">{business.owner.name}</h1>
         <p className="font-condensed mt-1 text-lg uppercase tracking-wide text-paper-dim">{business.owner.title}</p>
