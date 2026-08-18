@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14120f;
+  --color-steel: #2b2e33;
+  --color-steel-light: #454a52;
+  --color-ember: #d4551f;
+  --color-ember-light: #f2894a;
+  --color-paper: #f2ede4;
+  --color-paper-dim: #d8d2c6;
+  --color-line: rgba(255, 255, 255, 0.12);
+  --font-display: var(--font-bebas);
+  --font-condensed: var(--font-barlow);
+  --font-body: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+}
+
+/* Brushed-steel diagonal texture, fixed over the whole viewport */
+.brushed-steel::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.5) 0px,
+    rgba(255, 255, 255, 0.5) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+}
+
+.ember-glow {
+  box-shadow: 0 0 24px 2px rgba(212, 85, 31, 0.35);
+}
+
+@keyframes ember-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.ember-pulse {
+  animation: ember-pulse 2s ease-in-out infinite;
+}
+
+/* Torn-steel-plate seam — applied to the right-hand hero panel; left panel sits full-bleed beneath it.
+   Only kicks in at sm+ where the hero switches from stacked (mobile) to side-by-side (desktop). */
+@media (min-width: 640px) {
+  .torn-seam {
+    clip-path: polygon(
+      100% 0%, 100% 100%, 58% 100%, 62% 90%, 55% 82%, 63% 74%, 54% 66%,
+      61% 58%, 53% 50%, 60% 42%, 52% 34%, 59% 26%, 51% 18%, 58% 10%, 54% 0%
+    );
+  }
+}
+
+@keyframes scoreboard-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  94% { opacity: 0.4; }
+  96% { opacity: 1; }
+}
+.scoreboard-flicker {
+  animation: scoreboard-flicker 4s linear infinite;
+}
