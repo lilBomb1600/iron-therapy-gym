@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { MapPin, Clock, Globe } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
@@ -6,7 +9,13 @@ import { BarbellIcon } from "@/components/ui/GymIcons";
 export function HoursLocation() {
   return (
     <section className="relative overflow-hidden border-t border-line bg-steel py-20 sm:py-28">
-      <BarbellIcon className="pointer-events-none absolute -right-8 -bottom-6 w-64 rotate-6 text-paper/[0.05] sm:w-80" />
+      <motion.div
+        className="pointer-events-none absolute -right-8 -bottom-6 w-64 rotate-6 sm:w-80"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <BarbellIcon className="w-full text-paper/[0.05]" />
+      </motion.div>
       <Container className="relative grid gap-10 sm:grid-cols-3">
         <div className="flex flex-col gap-3">
           <Clock className="h-7 w-7 text-ember-light" />

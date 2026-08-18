@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { PlateIcon, DumbbellIcon } from "@/components/ui/GymIcons";
+
+const MotionLink = motion.create(Link);
 
 export function CTA() {
   return (
@@ -12,12 +17,15 @@ export function CTA() {
         <h2 className="font-display mx-auto mt-4 max-w-2xl text-balance text-5xl leading-[0.9] tracking-wide text-paper sm:text-6xl">
           THE GYM DOESN&apos;T CLOSE. NEITHER SHOULD YOUR EXCUSES.
         </h2>
-        <Link
+        <MotionLink
           href="/contact"
-          className="ember-glow mt-9 inline-block bg-ember px-10 py-4 font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-paper transition-transform hover:-translate-y-0.5"
+          whileHover={{ y: -6 }}
+          whileTap={{ scaleY: 0.82, y: 3 }}
+          transition={{ type: "spring", stiffness: 400, damping: 15 }}
+          className="ember-glow mt-9 inline-block bg-ember px-10 py-4 font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-paper"
         >
           Get Started
-        </Link>
+        </MotionLink>
       </Container>
     </section>
   );

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
 import { DumbbellIcon } from "@/components/ui/GymIcons";
@@ -19,9 +22,15 @@ export function Services() {
         <div className="grid grid-cols-1 gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {business.services.map((service, i) => (
             <div key={service} className="group relative flex min-h-[160px] flex-col justify-between bg-ink p-6 transition-colors hover:bg-steel">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-ember font-condensed text-xs font-bold text-ember-light">
+              <motion.span
+                initial={{ y: -36, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-10% 0px" }}
+                transition={{ type: "spring", stiffness: 300, damping: 12, delay: (i % 4) * 0.08 }}
+                className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-ember font-condensed text-xs font-bold text-ember-light"
+              >
                 {plates[i % plates.length]}
-              </span>
+              </motion.span>
               <h3 className="font-display text-2xl tracking-wide text-paper">{service}</h3>
             </div>
           ))}

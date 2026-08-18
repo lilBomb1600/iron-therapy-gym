@@ -6,6 +6,8 @@ import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
 import { BarbellIcon, PlateIcon } from "@/components/ui/GymIcons";
 
+const MotionLink = motion.create(Link);
+
 export function Hero() {
   return (
     <section className="relative flex min-h-[640px] flex-col overflow-hidden sm:min-h-[680px] sm:flex-row">
@@ -62,12 +64,15 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mt-8"
           >
-            <Link
+            <MotionLink
               href="/contact"
-              className="ember-glow inline-block bg-paper px-8 py-3.5 font-condensed text-sm font-semibold uppercase tracking-[0.15em] text-ink transition-transform hover:-translate-y-0.5"
+              whileHover={{ y: -6 }}
+              whileTap={{ scaleY: 0.82, y: 3 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+              className="ember-glow inline-block bg-paper px-8 py-3.5 font-condensed text-sm font-semibold uppercase tracking-[0.15em] text-ink"
             >
               Start Training
-            </Link>
+            </MotionLink>
           </motion.div>
         </Container>
       </div>

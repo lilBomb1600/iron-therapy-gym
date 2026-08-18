@@ -3,6 +3,7 @@ import { User } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
 import { KettlebellIcon, BarbellIcon } from "@/components/ui/GymIcons";
+import { CountUp } from "@/components/ui/CountUp";
 
 export const metadata: Metadata = { title: "The Coach | Iron Therapy Gym" };
 
@@ -25,7 +26,9 @@ export default function AboutPage() {
             <div className="grid grid-cols-3 divide-x divide-line border border-line">
               {business.owner.stats.map((s) => (
                 <div key={s.label} className="px-3 py-6 text-center">
-                  <p className="font-display text-3xl text-ember-light sm:text-4xl">{s.value}</p>
+                  <p className="font-display text-3xl tabular-nums text-ember-light sm:text-4xl">
+                    <CountUp value={s.value} />
+                  </p>
                   <p className="font-condensed mt-1 text-[11px] uppercase tracking-wide text-paper-dim sm:text-xs">{s.label}</p>
                 </div>
               ))}
