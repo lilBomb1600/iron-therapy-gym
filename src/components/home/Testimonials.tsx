@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { StarRating } from "@/components/ui/StarRating";
 import { reviews, averageRating, reviewCount } from "@/data/reviews";
@@ -23,14 +26,22 @@ export function Testimonials() {
         </div>
 
         <div className="grid grid-cols-1 gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-          {shown.map((r) => (
-            <div key={r.name} className="flex flex-col gap-3 bg-ink p-6">
+          {shown.map((r, i) => (
+            <motion.div
+              key={r.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10% 0px" }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
+              whileHover={{ y: -6, scale: 1.02, backgroundColor: "var(--color-steel)" }}
+              className="relative flex flex-col gap-3 bg-ink p-6"
+            >
               <StarRating rating={r.rating} />
               <p className="text-sm leading-relaxed text-paper-dim">&ldquo;{r.text}&rdquo;</p>
               <p className="font-condensed mt-auto text-xs uppercase tracking-wide text-paper/50">
                 {r.name} · {r.location}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Container>

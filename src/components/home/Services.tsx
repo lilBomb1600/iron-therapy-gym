@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { User, Users, Flame, RotateCw, Dumbbell, HeartPulse, Activity, Video } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
 import { DumbbellIcon } from "@/components/ui/GymIcons";
 
 // Real weight-plate denominations, used purely as a decorative index — not literal load values.
 const plates = [45, 35, 25, 10, 5, 45, 35, 25];
+const icons = [User, Users, Flame, RotateCw, Dumbbell, HeartPulse, Activity, Video];
 
 export function Services() {
   return (
@@ -20,20 +22,31 @@ export function Services() {
           </span>
         </div>
         <div className="grid grid-cols-1 gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-          {business.services.map((service, i) => (
-            <div key={service} className="group relative flex min-h-[160px] flex-col justify-between bg-ink p-6 transition-colors hover:bg-steel">
-              <motion.span
-                initial={{ y: -36, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-10% 0px" }}
-                transition={{ type: "spring", stiffness: 300, damping: 12, delay: (i % 4) * 0.08 }}
-                className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-ember font-condensed text-xs font-bold text-ember-light"
+          {business.services.map((service, i) => {
+            const Icon = icons[i % icons.length];
+            return (
+              <motion.div
+                key={service}
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 18 }}
+                className="group relative flex min-h-[160px] flex-col justify-between bg-ink p-6 transition-colors hover:bg-steel"
               >
-                {plates[i % plates.length]}
-              </motion.span>
-              <h3 className="font-display text-2xl tracking-wide text-paper">{service}</h3>
-            </div>
-          ))}
+                <div className="flex items-start justify-between">
+                  <motion.span
+                    initial={{ y: -36, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true, margin: "-10% 0px" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 12, delay: (i % 4) * 0.08 }}
+                    className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-ember font-condensed text-xs font-bold text-ember-light"
+                  >
+                    {plates[i % plates.length]}
+                  </motion.span>
+                  <Icon className="h-6 w-6 text-paper/20 transition-colors group-hover:text-ember-light/60" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-display text-2xl tracking-wide text-paper">{service}</h3>
+              </motion.div>
+            );
+          })}
         </div>
       </Container>
     </section>
