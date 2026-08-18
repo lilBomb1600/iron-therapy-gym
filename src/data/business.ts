@@ -13,6 +13,8 @@ export const business = {
   mapsEmbedSrc: "https://maps.google.com/maps?q=1280%20Diamond%20Way%2C%20Ste%20B%2C%20Concord%2C%20CA%2094520&output=embed",
   phone: "(925) 822-3488",
   phoneHref: "tel:+19258223488",
+  instagram: "@irontherapyofficial",
+  instagramHref: "https://instagram.com/irontherapyofficial",
   hours: "Open 24 Hours, 7 Days a Week",
   languages: ["English", "Spanish"],
   highlights: [

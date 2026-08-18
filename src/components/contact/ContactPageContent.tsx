@@ -5,6 +5,7 @@ import { MapPin, Clock, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
 import { PlateIcon } from "@/components/ui/GymIcons";
+import { FAQSection } from "@/components/shared/FAQSection";
 
 export function ContactPageContent() {
   return (
@@ -93,6 +94,7 @@ export function ContactPageContent() {
           </form>
         </div>
       </Container>
+      <FAQSection />
     </div>
   );
 }

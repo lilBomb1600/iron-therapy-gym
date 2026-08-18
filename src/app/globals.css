@@ -72,3 +72,8 @@ body {
 .scoreboard-flicker {
   animation: scoreboard-flicker 4s linear infinite;
 }
+
+/* Charcoal -> ember duotone treatment for real photos — see DuotoneFilter.tsx for the SVG def */
+.duotone {
+  filter: url(#ember-duotone) contrast(1.05);
+}
