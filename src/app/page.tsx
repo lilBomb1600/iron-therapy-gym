@@ -5,6 +5,10 @@ import { CoachPreview } from "@/components/home/CoachPreview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { HoursLocation } from "@/components/home/HoursLocation";
 import { CTA } from "@/components/home/CTA";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { pageCopy } from "@/lib/seo/copy";
+
+export const metadata = pageMetadata(pageCopy.home);
 
 export default function Home() {
   return (

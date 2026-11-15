@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { pageCopy } from "@/lib/seo/copy";
 import { Container } from "@/components/ui/Container";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { galleryImages } from "@/data/gallery";
 
-export const metadata: Metadata = { title: "Gallery | Iron Therapy Gym" };
+export const metadata = pageMetadata(pageCopy.gallery);
 
 export default function GalleryPage() {
   return (

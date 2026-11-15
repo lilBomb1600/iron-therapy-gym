@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { pageCopy } from "@/lib/seo/copy";
 import { User } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/data/business";
 import { KettlebellIcon, BarbellIcon } from "@/components/ui/GymIcons";
 import { CountUp } from "@/components/ui/CountUp";
 
-export const metadata: Metadata = { title: "The Coach | Iron Therapy Gym" };
+export const metadata = pageMetadata(pageCopy.about);
 
 export default function AboutPage() {
   return (
